@@ -1,4 +1,4 @@
-### What is ML?
+## What is ML?
 Machine Learning is about making machines get better at some task by learning from data, instead of having to explicitly code rules. There are many types of machine learning systems: unsupervised vs. supervised, batch vs. online, instance-based or model-based.
 
 The typical route a machine learning engineer takes is
