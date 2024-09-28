@@ -1,0 +1,25 @@
+Problem:
+2 major challenges with multi-round dialogue with LLMs
+
+1. During the decoding stage, caching previous tokens' Key and Value states
+consumes lots of memory. 
+2. Popular LLMs cannot generalize to longer texts than the training sequence length.
+
+Window attention, where only the most recent kv pairs are cached is a natural approach,
+but this paper shows that it fails when text length surpasses cache size.
+
+They found a phenomenon, an "attention sink", that keeping the KV of initial tokens
+will largely recover the performance of window attention. 
+
+Introduces the attention sink due to strong attention scores towards initial tokens,
+and then introduce StreamingLLM, a framework that enables LLMs trained with a finite length
+attention window to generalize to infinite sequence length without any fine tuning.
+
+1. Introduction
+
+LLMs are contrained by the attention window during pre-training. There have been many efforts to
+expand the window size and improve training efficiency for lengthy inputs, but the
+acceptable sequence length remains instrisically finite. 
+
+What is LLM streaming?
+
