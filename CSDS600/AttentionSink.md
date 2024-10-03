@@ -59,6 +59,10 @@ sliding window's KV to anchor the attentionc omptuation and stabilize the model'
 - Introduction of 4 initial tokens as attention sinks in Figure 2 suffice to restore LLM's performance. They hypothesize that incorporating a stable learnable token at the start of all training samples coudl act as a committed attention sink, eliminiating the need for multiple initial tokens to ensure consistent streaming
 
 ### Rolling KV Cache with Attention Sinks
+- to enable LLM streaming in already trained LLMs, they reintroduce a few starting tokens' KV in the attention computation
+- KV Caching in StreamLLM can be divided into 2 parts
+    - Attention sinks (four initial tokens) stabilizing the attention computation
+    - rolling KV cache retains the most recent tokens
 
 
 
