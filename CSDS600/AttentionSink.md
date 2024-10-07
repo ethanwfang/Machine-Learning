@@ -37,7 +37,6 @@ sliding window's KV to anchor the attentionc omptuation and stabilize the model'
 - Context Window Extension
     - centered on expanding context window, enabling processing of more tokens in one forward pass
     - both a computational and memory challenge
-    - 
 - Improving LLM's Utilization of Long Text
     - optimizes LLMs to better capture and employ the content with context rather than merely taking them as inputs
 
@@ -63,6 +62,7 @@ sliding window's KV to anchor the attentionc omptuation and stabilize the model'
 - KV Caching in StreamLLM can be divided into 2 parts
     - Attention sinks (four initial tokens) stabilizing the attention computation
     - rolling KV cache retains the most recent tokens
+    
 
 
 
