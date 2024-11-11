@@ -97,24 +97,20 @@ $\min_w \dfrac{1}{2} ||w||^2 + C \sum_{i=1}^{n} \xi_i$
 
 **Sigmoid Function:**
 
-$$
-\sigma(z) = \frac{1}{1 + e^{-z}}
-$$
+$\sigma(z) = \frac{1}{1 + e^{-z}}$
 Where $z = w^T X + b$.
 
 **Prediction Function:**
 
-$$
-P(y = 1 | X) = \sigma(w^T X + b) = \frac{1}{1 + e^{-(w^T X + b)}}
-$$
+$P(y = 1 | X) = \sigma(w^T X + b) = \frac{1}{1 + e^{-(w^T X + b)}}$
+
 If the predicted probability is greater than 0.5, the model classifies the instance as class 1, otherwise class 0.
 
 **Log Loss (Cross-Entropy Loss):**
 
 The model minimizes the log loss during training:
-$$
-\text{Log Loss} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) \right]
-$$
+$\text{Log Loss} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) \right]$
+
 Where $y_i$ is the true label and $p_i$ is the predicted probability.
 
 **Regularization (Optional):**
