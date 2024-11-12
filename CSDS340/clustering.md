@@ -11,7 +11,7 @@ Matrix representation: $n*k$ binary matrix W where $w^{i, j} = 1$
 ### K-Means Clustering
 K-means clustering minimizes within-cluster SSE or cluster inertia.    
 
-$ SSE = \sum_{i=1}^{n} \sum_{j=1}^{k} w^{(i, j)} ||x^{i} - \mu^{j}||^{2}_{2}$
+$SSE = \sum_{i=1}^{n} \sum_{j=1}^{k} w^{(i, j)} ||x^{i} - \mu^{j}||^{2}_{2}$
 
 So how can we find the optimal cluster assignments $W$?   
 - $W$ is a binary matrix so this is a combinatorial optimization    
@@ -43,7 +43,6 @@ You want the silhouettes for each cluster to be around equal.
 2. Attempts to minimize sum of squared Euclidean distances  
 3. Scaling features so that the clusters are close to spherical helps to find better clusters   
 4. K-means algorithm converges only to a local minimum of SSE  
-5. 
 
 ### Hierarchical Clustering
 Hierarchical clustering algorithms group data points into clusters based on their similarity. Unlike other clustering methods like K-means, which requires a predefined number of clusters, hierarchical clustering builds a hierarchy of clusters and allows you to decide the number of clusters at a later stage by cutting the dendrogram at a chosen level.
