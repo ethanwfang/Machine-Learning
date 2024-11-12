@@ -9,13 +9,27 @@ This model assumes a linear relationship between the dependent and independent v
 
 Linear regression that uses the mean-squared error as the loss function is referred to as ordinary least squares (OLS). 
 
+Assumptions:  
+1. Linearity  
+2. Independence  
+3. Homoscedasticity: variance of residuals is constant  
+4. Normality: residuals are randomly distributed  
+
+### Random Forest Regression
+Ensemble learning method that builds multiple decision trees during training and averages their predictions for better accuracy and robustness. The final prediction is the average of the predictions from all trees.
+
+Advantages: handles non-linear relationships effectively, robust to outliers, reduces overfitting compared to individual decision trees, can model complex patterns
+
+Assumptions: 
+1. No linear relationship  
+2. Independence of observations (data is not highly correlated)
+3. Features are somewaht important to predict the target variable  
+
 ### Ridge Regression 
 
 This is a type of linear regression that includes regularization to prevent overfitting and improve the stability of the model. Specifically, ridge regression adds an L2 penalty to the loss function to shrink the model coefficients towards zero by adding a constraint on their magnitudes. This helps when the data has mluticollinearity or when the number of features is much larger than the number of observations.
 
-$$
-J(β) = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{p} \beta_j^2
-$$
+$J(β) = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{p} \beta_j^2$
 
 where
 - $y_i$ is the actual value of the response variable

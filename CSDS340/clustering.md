@@ -46,12 +46,12 @@ You want the silhouettes for each cluster to be around equal.
 5. 
 
 ### Hierarchical Clustering
-Hierarchical clustering algorithms group data points into clusters based on their similarity. Unlike other clustering methods like K-means, which requires a predefined number of clusters, hierarchical clustering buildsa hierarchy of clusteres and allows you to decide the number of clusteres at a later stage by cutting the dendrogram at a chosen level.
+Hierarchical clustering algorithms group data points into clusters based on their similarity. Unlike other clustering methods like K-means, which requires a predefined number of clusters, hierarchical clustering builds a hierarchy of clusters and allows you to decide the number of clusters at a later stage by cutting the dendrogram at a chosen level.
 
 1. Agglomerative (Bottom-Up)
 - Starts with each data point as its own cluster
 - Iteratively merges the clsoest clusters based on a similarity or distance metric (e.g. Euclidean distance)
-- Stops when all points are merged into a single cluster or whena specified number of clusters is reached.
+- Stops when all points are merged into a single cluster or when a specified number of clusters is reached.
 
 2. Divisive (top-down)
 - starts with all data points in a single cluster
@@ -70,6 +70,38 @@ Steps in hierarchical clustering:
 Advantages of hierarchical: does not require number of clusteres to be predefined, produces a hierarchy of clusters, which can give more insight into the data structure, can work well with small to medium-sized datasets
 
 Disadvantages: computationally intensive for large datasets (b/c of distance matrix), sensitive to noise and outliers, which can distort the hierarchical structure, choice of distance metric and linkage method can significantly affect results
+
+#### Single Linkage
+The distance between 2 clusters is defined as the shortest distance between any single point in one cluster and any single point in the other cluster.
+
+Characteristics:  
+- Emphasizes close points between clusters  
+- Can create long, chain-like clusters  
+- suitable when the goal is to find sparse or elongated clusters
+
+#### Complete Linkage
+The distance between 2 clusters is defined as the maximum distance between any single point in one cluster and any single point in the other cluster
+
+Characteristics:  
+- Emphasizes farthest points between clusters  
+- Tends to create compact and spherical clusters  
+- Sensitive to outliers since it considers the farthest points
+
+#### Average Linkage
+The distance between two clusters is the average distance between all pairs of points in the two clusters.
+
+Characteristics:  
+- Balances the single and complete linkage methods  
+- Results in more balanced cluster sizes  
+- Less sensitive to outliers compared to complete linkage
+
+#### Maximum (centroid) linkage
+The distance between two clusters is the distance between their centroids (average point of all points in the cluster). 
+
+Characteristics:  
+- Focuses on the overall cluster position rather than individual points  
+- Sensitive to cluster shape and size  
+- Can sometimes result in inversions (where merging two clusters decreases the overall distance)
 
 ### Spectral Clustering
 Spectral clustering is a graph-based clustering method that uses eigenvalues and eigenvectors of a graph's Lapalcian matrix to identify clusters. Unlike traditional clustering methods like K-means, spectral clustering excels at identifying non-convex clusters and clusters that may have irregular shapes.
